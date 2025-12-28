@@ -13,41 +13,61 @@ const ExperienceSection = () => {
       period: "2019 – 2021",
       title: "Chief Executive Officer (CEO)",
       company: "Sam Production Indonesia",
+      location: "Makassar, Indonesia",
       icon: Building2,
-      description:
-        "Led a creative agency team, managed marketing strategies, handled client communications, and resolved operational issues.",
+      highlights: [
+        "Achieved an 85% success rate in client acquisition strategies, converting nearly every prospect into a client.",
+        "Directed a creative team to deliver high-quality projects, ensuring 100% client satisfaction.",
+        "Managed business operations and marketing, resulting in consistent project growth year-over-year.",
+      ],
     },
     {
       period: "2019 – 2021",
       title: "Brand Ambassador & Marketing Team",
       company: "President University",
+      location: "Cikarang, Indonesia",
       icon: GraduationCap,
-      description:
-        "Represented the university in promotional events, conducted public speaking, and managed student recruitment campaigns.",
+      highlights: [
+        "Represented the university in nearly 50 events within a single year, significantly boosting brand visibility.",
+        "Conducted public speaking and promotional activities that increased student recruitment interest.",
+        "Managed student recruitment campaigns effectively, contributing to the university's intake targets.",
+      ],
     },
     {
       period: "2018 – 2020",
       title: "Business Owner",
       company: "Gorengan Sedap (F&B Business)",
+      location: "Makassar, Indonesia",
       icon: Store,
-      description:
-        "Founded and managed a home-based F&B business. Oversaw production, sales, and managed tenants at various festival events.",
+      highlights: [
+        "Achieved a 45% daily purchase conversion rate on food delivery platforms (GrabFood).",
+        "Generated consistent daily sales of 30-40 units (approx. IDR 1 million/day) solely through Instagram and online channels.",
+        "Managed end-to-end production and quality control to maintain high customer ratings.",
+      ],
     },
     {
       period: "2020 – 2021",
       title: "Social Media Manager",
       company: "CV. Sam Kreatif Indonesia",
+      location: "Makassar, Indonesia",
       icon: Building2,
-      description:
-        "Created digital content, managed social media accounts, executed digital marketing campaigns, and handled copywriting.",
+      highlights: [
+        "Grew social media insights and followers by over 1000% (from hundreds to thousands) organically, prior to using influencer marketing.",
+        "Developed content strategies that independently drove high engagement without paid endorsements.",
+        "Later collaborated with influencers to further scale up the already established audience base.",
+      ],
     },
     {
       period: "2020",
       title: "Manager of Marketing",
       company: "UD. Sam Kayu",
+      location: "Gowa, Indonesia",
       icon: Building2,
-      description:
-        "Managed marketing communications, social media strategies, and led the marketing team to increase brand awareness.",
+      highlights: [
+        "Optimized digital marketing strategies, contributing 75% to the overall sales growth.",
+        "Accelerated online sales performance through effective 'word-of-mouth' and digital campaigns.",
+        "Achieved 50% of key managerial targets within the marketing division in a short period.",
+      ],
     },
   ];
 
@@ -104,10 +124,20 @@ const ExperienceSection = () => {
                         </h3>
                       </div>
                     </div>
-                    <p className="text-lg font-medium text-foreground mb-2">
+                    <p className="text-lg font-medium text-foreground mb-1">
                       {exp.company}
                     </p>
-                    <p className="text-muted-foreground">{exp.description}</p>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      {exp.location}
+                    </p>
+                    <ul className={`text-muted-foreground text-sm space-y-2 ${index % 2 === 0 ? "md:text-right" : "text-left"}`}>
+                      {exp.highlights.map((highlight, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className={`text-primary mt-1.5 flex-shrink-0 ${index % 2 === 0 ? "md:order-last" : ""}`}>•</span>
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
 
